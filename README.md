@@ -24,3 +24,7 @@ Sharing my solutions for CSCI 571 (Spring 21) at USC
 
 1. Download USCFilms.apk and install the application on your android phone.
 2. Received 100% in all the assignments.
+3. Hosted Links:
+- [Trojan Cafe - static website](https://sanyasin.github.io/allAssignments_1998/HW3/hw3_home.html)
+- [Flask webapp - on azure](https://sanya638.azurewebsites.net/)
+- [Angular webapp - on GAE](https://sanya-usc-films.wl.r.appspot.com/)
