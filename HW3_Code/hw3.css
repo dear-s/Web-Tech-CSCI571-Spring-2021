@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #faebd7;
+    margin-bottom: 40px;
+    width: 990px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pages_on_nav {
+    margin-left: 70px;
+}
+
+.topnav a {
+    float: left;
+    color: blue;
+    padding: 10px 16px 10px 0px;
+    font-size: 19px;
+    display: block;
+    text-decoration: solid;
+}
+
+.btn {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: double;
+    border-color: black;
+    border-width: 3px;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:link {
+    color: blue;
+}
+
+a:active {
+    color: red;
+}
+
+.header {
+    color: darkblue;
+    margin-top: 20px;
+    margin-left: 12.3em;
+    margin-bottom: 20px;
+    width: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header2 {
+    color: purple;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 350px;
+    width: 900px;
+    font-family: cursive;
+}
+
+.main_heading {
+    color: #faebd7;
+    padding-left: 205px;
+    padding-top: 155px;
+    font-size: 50px;
+}
+
+.parallax {
+    background-image: url('restaurant.jpg');
+    height: 500px;
+    width: 840px;
+    padding-top: 10px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: 40px -5px;
+    background-repeat: no-repeat;
+    background-size: 900px 700px;
+
+    margin-left: 70px;
+}
+
+
+button {
+    background-color: white;
+    color: black;
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+.button_div {
+    padding-left: 540px;
+    padding-top: 40px;
+}
+
+.blue {
+    color: #195eb0
+}
+
+img {
+    height: 290px;
+    width: 400px;
+    object-fit: absolute;
+}
+
+.row {
+    width: 1000px;
+    height: 360px;
+    font-size: large;
+}
+
+.image_col1 {
+    float: left;
+    display: inline;
+    margin-left: 70px;
+}
+
+.des_col1 {
+    padding-top: 100px;
+    height: 270px;
+    margin-left: 580px;
+    width: 400px;
+}
+
+.italian_img {
+    border: 10px solid #ffe5dd;
+}
+
+.des_col2 {
+    width: 390px;
+    margin-left: 70px;
+    display: inline;
+    float: left;
+    padding-top: 110px;
+}
+
+.image_col2 {
+    margin-left: 30px;
+    height: 270px;
+    width: 400px;
+    display: inline;
+}
+
+.indian_img {
+    border: 10px solid lightblue
+}
+
+.des_col3 {
+    padding-top: 100px;
+    height: 270px;
+    margin-left: 580px;
+    width: 400px;
+}
+
+.image_col3 {
+    float: left;
+    margin-left: 70px;
+}
+
+.japanese_img {
+    border: 10px solid #ffe5dd;
+}
+
+.des_col4 {
+    height: 270px;
+    width: 390px;
+    margin-left: 70px;
+    display: inline;
+    float: left;
+    padding-top: 100px;
+}
+
+.image_col4 {
+    margin-left: 30px;
+    height: 270px;
+    width: 400px;
+    display: inline;
+    float: left;
+}
+
+.desserts_img {
+    border: 10px solid lightblue
+}
