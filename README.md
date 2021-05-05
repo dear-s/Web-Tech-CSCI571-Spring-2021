@@ -9,8 +9,8 @@ Sharing my solutions for CSCI 571 (Spring 21) at USC
 
 |Assignment|Description|Tech Stack|PDF|
 |---|---|---|---|
-|HW3|Imitate a static web page|HTML, CSS|[HW 3](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW3/Description.pdf)|
-|HW6|Flask web app on Azure|Python, Flask, HTML, CSS, JavaScript, DOM, JSON, XMLHttpRequest, Azure, TMDB API|[HW 6](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/HW6.pdf)|
-|HW8|Getting familiar with angular components - web page for TMDB API|GAE, NodeJS, Express, Angular, Bootstrap, AJAX, localStorage API, TMDB API|[HW 8](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW8/HW8.pdf)|
-|HW9|USC Films Android App|Java, Android SDK, JSON, Android Lifecycle, GAE|[HW 9](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW9/Android/HW9_Android.pdf)|
+|HW3|Imitate a static web page - hosted using **Github Pages**|HTML, CSS|[HW 3](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW3/Description.pdf)|
+|HW6|Flask web app - hosted using **Azure**|Python, Flask, HTML, CSS, JavaScript, DOM, JSON, XMLHttpRequest, Azure, TMDB API|[HW 6](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/HW6.pdf)|
+|HW8|Getting familiar with angular components - web page for TMDB API - hosted using **Google App Engine**|GAE, NodeJS, Express, Angular, Bootstrap, AJAX, localStorage API, TMDB API|[HW 8](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW8/HW8.pdf)|
+|HW9|USC Films Android App - hosted using **Google App Engine**|Java, Android SDK, JSON, Android Lifecycle, GAE|[HW 9](https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW9/Android/HW9_Android.pdf)|
 
