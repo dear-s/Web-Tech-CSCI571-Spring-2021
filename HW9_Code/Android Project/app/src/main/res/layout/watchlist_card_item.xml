@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    cardview:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:id="@+id/watchlist_image_view"
+            android:foreground="@drawable/trending_gradient_shape"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtWatchlist_mediaType"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/minus_button"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_remove_circle_outline_24"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

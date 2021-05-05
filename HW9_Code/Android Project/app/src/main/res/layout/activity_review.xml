@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".ReviewActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rev_rating"
+        android:text="3/58"
+        android:textColor="@color/white"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_star_rate_24"
+        android:layout_toRightOf="@+id/rev_rating"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rev_rating"
+        android:id="@+id/rev_user_date"
+        android:text="user_date"
+        android:textSize="23dp"
+        android:textColor="@color/app_blue_theme"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rev_user_date"
+        android:text="dummy reviews"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:id="@+id/rev_content"
+        android:textSize="18dp"/>
+
+</RelativeLayout>
+
+</ScrollView>

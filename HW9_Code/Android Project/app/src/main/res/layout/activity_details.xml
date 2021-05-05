@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="350dp"
+            android:id="@+id/progressbar"
+            android:backgroundTint="@color/colorPrimary"
+            android:visibility="visible"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_text"
+            android:layout_marginTop="400dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="Loading..."
+            android:visibility="visible"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/home_frame_layout_overlay"
+            android:visibility="gone">
+
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:autoPlay="false"
+                app:showFullScreenButton="true"
+                app:enableAutomaticInitialization="true"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/backdrop_view"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_search_24"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title will come here"
+                android:background="@color/app_blue_theme"
+                android:textColor="@color/white"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:id="@+id/title_detailsActivity"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="10dp"/>
+
+            <com.borjabravo.readmoretextview.ReadMoreTextView
+                android:id="@+id/overview_detailsActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:trimLength="170"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:colorClickableText="#A8A8A8"
+                app:trimMode="trimModeLength"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Genres"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/genres_detailsActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/year_detailsActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:paddingLeft="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="10dp">
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_add_circle_outline_24"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="fitStart"
+                    android:id="@+id/plus_icon"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_remove_circle_outline_24"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="fitStart"
+                    android:id="@+id/minus_icon"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_baseline_facebook_24"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/colorPrimary"
+                    android:id="@+id/fb_detailsActivity"/>
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_twitter_logo_dialog"
+                    android:layout_marginLeft="100dp"
+                    android:background="@color/colorPrimary"
+                    android:id="@+id/twitter_detailsActivity"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cast"
+                android:id="@+id/cast_header"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+
+                    android:id="@+id/cast_recyclerView">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reviews"
+                android:id="@+id/review_header"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"/>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reviews_recyclerView">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended Picks"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/rec_header"
+                android:textColor="@color/app_blue_theme"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recMovies_recyclerView"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
