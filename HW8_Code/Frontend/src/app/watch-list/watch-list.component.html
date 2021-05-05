@@ -1,0 +1,24 @@
+
+<div *ngIf = "new_watch_list_order_for_frontend.length > 0">
+
+        <h1 class="ml-sm-5 pl-sm-5 mb-5 pb-4" >My WatchList</h1>
+
+        <div *ngFor = "let obj of new_watch_list_order_for_frontend" [ngClass]="setMargins()">
+        
+            <div class="card zoom hvrbox mb-5" [ngClass]="setSize()" (click)="onSelect(obj)">
+                <img class="card-img-top" src="{{obj.poster_path}}">
+                <div class="carousel-caption hvrbox-layer_top" [ngClass] = "setHover()">
+                    <h3 class="hvrbox-text">{{obj.title}}</h3>
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+
+
+
+    <div *ngIf = "watch_list.length == 0">
+        <!-- length is 0 -- nothing in watch_list -->
+        <h1 style="text-align: center" class="mt-5 mx-n2">No items found in Watchlist.</h1>
+    </div>

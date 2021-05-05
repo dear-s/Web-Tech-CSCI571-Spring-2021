@@ -1,0 +1,55 @@
+.form-control{
+    width: 250px;
+}
+
+
+nav{
+    /* padding: 5px 5em; */
+}
+
+#typeahead-http{
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    font-size: larger;
+    padding-left: 1em;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+ngb-highlight{
+    margin-left: 10px;
+    color: white;
+}
+
+.navbar-brand{
+    font-size: x-large;
+}
+
+.nav-link{
+    font-size: larger;
+    margin-left: 1em;
+}
+
+/* sticky top properties - for mobile screen */
+.fixed_top{
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.mr_auto{
+    margin-right: auto!important;
+    
+}
+
+.ml_auto{
+    margin-left: auto!important;
+    align-items: flex-end;
+}

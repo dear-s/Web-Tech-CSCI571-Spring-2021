@@ -1,0 +1,56 @@
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark dark_navbar_id py-2 px-5" [ngClass] = "fixNavBar()">
+  <a class="navbar-brand" routerLink="">USC Films</a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav" [ngClass] = "left_right_toggle()">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="mylist" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">My List</a>
+      </li>
+    </ul>
+
+
+    
+    <!-- add search input field -->
+
+     <fieldset class="form-inline">
+      <div class="form-group">
+
+        <ng-template #rt let-r="result" let-t="term" >
+          <img [src]="r['backdrop_path']" class="mr-1" style="width: 65px">
+          <ngb-highlight [result]="r.title" [term]="t"></ngb-highlight>
+        </ng-template>
+
+        <input
+              #input
+              [resultTemplate]="rt"
+              id="typeahead-http"
+              type="text"
+              class="form-control mx-sm-3"
+              [class.is-invalid]="searchFailed"
+              [(ngModel)]="model"
+              [ngbTypeahead]="search"
+              placeholder="Search"
+              [inputFormatter]="formatter"
+              (selectItem)="method_selected($event, input)" />
+
+      </div>
+    </fieldset>
+
+
+</div>
+</nav>
+
+
+<!-- <div class="container"> -->
+  <router-outlet></router-outlet>
+  
+<!-- </div> -->
+

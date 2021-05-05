@@ -1,0 +1,138 @@
+
+<div class="content_body" style="margin-bottom: 7em;">
+
+    <!-- row -->
+    <!-- trailer & right-side details -->
+    <div class="row mx-n4 mx-sm-0">
+        <div class="col-sm-8">
+        <div class="embed-responsive embed-responsive-16by9">
+        <youtube-player
+            videoId={{json_data_list.movies_video_endpoint[0].key}}
+            suggestedQuality="highres"
+            style="float: left;"
+        ></youtube-player></div></div>
+
+
+        <div style="float: left;" class="col-sm-4">
+            <h1 class="mt-4 mt-sm-0">{{json_data_list.movies_details_endpoint[0].title}}</h1>
+            <p class="light_color"><i>{{json_data_list.movies_details_endpoint[0].tagline}}</i></p>
+            <p class="light_color">{{json_data_list.movies_details_endpoint[0].release_date.slice(0,4)}} | &#9733; {{json_data_list.movies_details_endpoint[0].vote_average}} | {{json_data_list.movies_details_endpoint[0].runtime}}</p>
+            <p><b>Genres</b> : <span class="light_color">{{json_data_list.movies_details_endpoint[0].genres}}</span></p>
+            <p><b>Spoken Languages</b> : <span class="light_color">{{json_data_list.movies_details_endpoint[0].spoken_languages}}</span></p>
+
+            <button type="button" class="btn btn-primary btn-lg" (click)="toggle()" id="bt">
+                {{buttonName}}
+            </button>
+
+            <ng-container>
+
+                <div class="alert fade alert_box alert-dismissible"
+                    [class.visible]="isVisible"
+                    [ngClass]="{'alert-success' : alert_text == 'Added to watchlist.',
+                                'alert-danger' : alert_text == 'Removed from watchlist.',
+                                'alert-dismissible' : true}"
+                    role="alert">
+
+                        {{alert_text}}
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeIt()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+            </ng-container>
+
+        </div>
+
+    </div>
+
+    <!-- description -->
+    <div class="row description mx-0 mx-n2 mx-sm-4">
+        <h5 style="width: 100%;">Description</h5>
+        <p class="light_color" style="text-align: justify;">{{json_data_list.movies_details_endpoint[0].overview}}</p>
+
+    </div>
+
+    <!-- share icons - twitter, facebook -->
+    <div class="share mx-0 mx-n2 mx-sm-4">
+        <div><h5>Share</h5></div>
+        <div>
+            <a class="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text=Watch%20{{json_data_list.movies_details_endpoint[0].title}}%0A&url={{json_data_list.movies_video_endpoint[0].create_video_link}}%0A&hashtags=USC,CSCI571,FightOn"
+                target="_blank">
+                <i class="fa fa-twitter fa-2x"
+                    style="color: #007bff;"></i>
+            </a>
+
+            <a class="fb-share-button"
+                href="https://www.facebook.com/sharer/sharer.php?u={{json_data_list.movies_video_endpoint[0].create_video_link}}"
+                target="_blank">
+                <i class="fa fa-facebook-square fa-2x"     
+                    style="color: #007bff;"></i>
+            </a>
+            
+        </div>
+
+    </div>
+
+
+    <!-- full cast and crew && reviews -->
+    <app-movie-cast></app-movie-cast>
+
+
+    <!-- recommended movies -->
+    <div class="mt-sm-5 ml-sm-5 mr-sm-5 pb-5" *ngIf="json_recMovies.recMov.length > 0">
+        <h1 class="my-5">Recommended Movies</h1>
+
+        <!-- carousel - 6 each one -->
+        <ngb-carousel *ngIf="array2d" class="check_focus" [interval]="false" [ngClass]="noIndicators()">
+
+            <ng-template ngbSlide *ngFor="let arr of array2d; index as i">
+                <!-- 6 cards -->
+                <div *ngFor = "let obj of arr" [ngClass]="setMargins()">
+                
+                    <div class="card zoom hvrbox" (click)="onSelect(obj)" [ngClass]="setWidth()">
+                        <img class="card-img-top" src="{{obj.poster_path}}">
+                        <div class="carousel-caption hvrbox-layer_top" [ngClass]="setHover()">
+                            <h3 class="hvrbox-text">{{obj.title}}</h3>
+                        </div>
+                    </div>
+                
+                </div>
+
+            </ng-template>
+        </ngb-carousel>
+
+    </div>
+
+
+
+    <!-- similar movies -->
+    <div class="mt-sm-5 ml-sm-5 mr-sm-5 pb-5" *ngIf="json_recMovies.simMov.length > 0">
+        <h1 class="my-5">Similar Movies</h1>
+
+        <!-- carousel - 6 each one -->
+        <ngb-carousel *ngIf="array2d2" class="check_focus" [interval]="false" [ngClass]="noIndicators()">
+
+            <ng-template ngbSlide *ngFor="let arr of array2d2; index as i">
+                <!-- 6 cards -->
+                <div *ngFor = "let obj of arr" [ngClass]="setMargins()">
+                
+                    <div class="card zoom hvrbox" (click)="onSelect(obj)" [ngClass]="setWidth()">
+                        <img class="card-img-top" src="{{obj.poster_path}}">
+                        <div class="carousel-caption hvrbox-layer_top" [ngClass]="setHover()">
+                            <h3 class="hvrbox-text">{{obj.title}}</h3>
+                        </div>
+                    </div>
+                
+                </div>
+
+            </ng-template>
+        </ngb-carousel>
+
+    </div>
+
+
+</div>
+

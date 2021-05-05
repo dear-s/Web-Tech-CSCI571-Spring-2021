@@ -1,0 +1,26 @@
+
+<h1>Trending Movies</h1>
+
+<!-- carousel with cards -->
+
+
+<ngb-carousel *ngIf="array2d" [interval]="false" class="check_focus" [ngClass] = "noIndicators()">
+
+    <ng-template ngbSlide *ngFor="let arr of array2d; index as i">
+    
+        <!-- 6 cards -->
+        <!-- card component -->
+        <div *ngFor = "let obj of arr" [ngClass] = "setMargins()">
+        
+            <div class="card zoom hvrbox" [ngClass] = "setWidth()" (click)="onSelect(obj)">
+                <img class="card-img-top" src="{{obj.poster_path}}">
+                <div class="carousel-caption hvrbox-layer_top" [ngClass] = "setHover()">
+                    <h3 class="hvrbox-text">{{obj.title}}</h3>
+                </div>
+            </div>
+        
+        </div>
+
+    </ng-template>
+
+</ngb-carousel>

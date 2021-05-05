@@ -1,0 +1,27 @@
+
+<div class="cont_height mt-4 mt-sm-0">
+<ngb-carousel  *ngIf="json_data_list" #carousel
+                [interval]="5000"
+                [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus"
+                (slide)="onSlide($event)"
+                class="check_focus"
+                [ngClass] = "noIndicators()">
+  
+  <ng-template  class="" ngbSlide *ngFor="let img of json_data_list.currently_playing_movies; index as i">
+
+    <a rel="nofollow noopener noreferrer" (click)="onSelect(img)">
+        <div class="picsum-img-wrapper zoom hvrbox">
+            <img class="hvrbox-layer_bottom" id="image_prop" [src]="img.backdrop_path">
+            <div class="carousel-caption hvrbox-layer_top"
+                  [ngClass] = "setHover()">
+              <h3 class="hvrbox-text" [ngClass] = "setText()">{{img.title}}</h3>
+            </div>
+        </div>
+    </a>
+
+  </ng-template>
+
+</ngb-carousel>
+</div>
+<!-- <hr> -->

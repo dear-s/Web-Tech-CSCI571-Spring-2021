@@ -1,0 +1,136 @@
+
+<div class="cast_component" *ngIf="json_data_list.tv_cast_endpoint.length > 0">
+    <h1 class="ml-sm-2">Full Cast and Crew</h1>
+
+    <!-- add horizontal scrollbar on cards -->
+
+    <div class="card-group card-group-scroll px-sm-3 py-sm-4" [ngClass]="noIndicators()" >
+
+        <div class="borders card" *ngFor="let obj of json_data_list.tv_cast_endpoint; index as i" style="border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;"
+                [ngClass]="{'col_align': large_screen, 'col_align_mobile': small_screen}" (click)="openVerticallyCentered(content, obj.char_id)">
+            
+            <img class="card-img-top" style="border-top-right-radius: 20px; border-top-left-radius: 20px;" src="{{obj.full_pp}}">
+            
+            <div class="card-body" style="text-align: center; 
+                                            margin: 0; 
+                                            padding: 10px; 
+                                            bottom: 0; 
+                                            position: absolute; 
+                                            width: 100%;
+                                            background-color: white;
+                                            border-bottom-left-radius: 20px;
+                                            border-bottom-right-radius: 20px;">
+                
+                <p class="card-text black-text" style="margin: 0;"><b>{{obj.name}}</b></p>
+                <p class="black-text" style="margin: 0;"><b>AS</b></p>
+                <p class="black-text" style="margin: 0;">{{obj.character}}</p>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+<!-- modal -->
+<ng-template #content let-modal style="margin: auto;">
+  
+  <div class="modal-content">
+  <div class="modal-header" style="color: black;">
+    <h4 class="modal-title">{{json_pdata.pName}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body" style="color: black; max-height: 88vh; overflow-y: auto;">
+    <div class="row">
+        <div class="col-2">
+            <img src="{{json_pdata.pImage}}" alt="" [ngClass]="cast_image()">
+        </div>
+        <div [ngClass]="select_cols()">
+            <p class="mod_entries" *ngIf="json_pdata.pDob != null && json_pdata.pDob.length">Birth: {{json_pdata.pDob}}</p>
+            <p class="mod_entries" *ngIf="json_pdata.pPlace != null && json_pdata.pPlace.length">Birth Place: {{json_pdata.pPlace}}</p>
+            <p class="mod_entries" *ngIf="json_pdata.pGender != null && json_pdata.pGender.length">Gender: {{json_pdata.pGender}}</p>
+            <p class="mod_entries" *ngIf="json_pdata.pHomepage != null && json_pdata.pHomepage.length">Website: <a href="{{json_pdata.pHomepage}}" target="_blank">{{json_pdata.pHomepage}}</a> </p>
+            <p class="mod_entries" *ngIf="json_pdata.pKnown_for != null && json_pdata.pKnown_for.length">Known for: {{json_pdata.pKnown_for}}</p>
+            <p class="mod_entries" *ngIf="json_pdata.pOther_names != null && json_pdata.pOther_names.length">Also Known as: {{json_pdata.pOther_names}}</p>
+
+            <div class="media_icons">
+                <a href="https://imdb.com/name/{{json_pdata.pImdb_id}}" target="_blank" *ngIf="json_pdata.pImdb_id != null && json_pdata.pImdb_id.length > 0">
+                    <i class="fa fa-imdb fa-2x dada" style="color: rgb(196, 196, 67);" ngbTooltip="Visit IMDB"
+                    tooltipClass="my-custom-class"></i>
+                </a>
+                <a href="https://instagram.com/{{json_pdata.pInstagram_id}}" target="_blank" *ngIf="json_pdata.pInstagram_id != null && json_pdata.pInstagram_id.length > 0">
+                    <i class="fa fa-instagram fa-2x dada" style="color: rgb(69, 24, 105);" ngbTooltip="Visit Instagram"
+                    tooltipClass="my-custom-class"></i>
+                </a>
+                <a href="https://twitter.com/{{json_pdata.pTwitter_id}}" target="_blank" *ngIf="json_pdata.pTwitter_id != null && json_pdata.pTwitter_id.length > 0">
+                    <i class="fa fa-twitter fa-2x dada" style="color: #1da1f2;" ngbTooltip="Visit Twitter"
+                    tooltipClass="my-custom-class"></i>
+                </a>
+                <a href="https://facebook.com/{{json_pdata.pFacebook_id}}" target="_blank" *ngIf="json_pdata.pFacebook_id != null && json_pdata.pFacebook_id.length > 0">
+                    <i class="fa fa-facebook fa-2x dada" style="color: #1da1f2;" ngbTooltip="Visit Facebook"
+                    tooltipClass="my-custom-class"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0px; margin-top: 20px;" *ngIf="json_pdata.pBiography != null && json_pdata.pBiography.length">
+        <h1>Biography</h1>
+        <p style="width: 100%;">{{json_pdata.pBiography}}</p>
+    </div>
+  </div>
+
+ 
+  </div>
+
+</ng-template>
+
+
+
+<!-- reviews -->
+
+<div class="reviews_component ml-0" *ngIf="json_reviews.review_list.length > 0">
+    <h1 class="ml-sm-3">Reviews <span id="review_count">{{json_reviews.review_list.length}}</span></h1>
+
+    <!-- reviews cards -->
+    <!-- for loop for making reviews -->
+    <div class="card mx-sm-3"
+    *ngFor="let obj of json_reviews.review_list; index as i"
+    style="margin-bottom: 20px; border-radius: 12px;">
+        <div class="card-body black-text">
+            
+            <div class="row">
+
+                <!-- picture col -->
+                <div class="col-sm-3">
+                    <img src="{{obj.avatar_path}}" [ngClass]="rev_avatar()">
+                </div>
+                <!-- review col -->
+                <div class="col-sm-8" style="text-align: justify;">
+                    <h3 class="rev_author_line">A review created by {{obj.author}}
+                        <span [ngClass]="rate_span()"><span class="star_class">&#9733;</span> <span class="rating_subs">{{obj.rating}}</span> </span> </h3>
+
+                    <p class="written_by">
+                        Written by {{obj.author}} on {{obj.created_date}}, {{obj.created_time}}
+                    </p>
+
+                    <p class="content-ellipses">
+                        {{obj.content}}
+                    </p>
+
+                    <a class="anchor_read"
+                    href="{{obj.url}}" target="_blank">
+                        Read the rest
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
