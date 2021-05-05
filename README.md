@@ -3,7 +3,7 @@ Sharing my solutions for CSCI 571 (Spring 21) at USC
 
 # [Course Website](https://bytes.usc.edu/cs571/s21_JSwasm00/home/index.html)
 
-# [Solutions - Github Pages](https://sanyasin.github.io/san1998.html)
+# [Solution Links - Github Pages](https://sanyasin.github.io/san1998.html)
 
 ## 4 Graded Assignments
 
